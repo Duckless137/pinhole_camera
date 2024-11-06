@@ -3,7 +3,7 @@
 libs := token_parser token_reader
 calculators := distance duration
 
-debug_flags := -Wall -Wpedantic -O0
+debug_flags := -g -Wall -Wpedantic -O0
 release_flags := -Wall -Werror -Wpedantic -O3
 
 # ---Computer config (DO NOT TOUCH)---

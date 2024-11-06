@@ -50,10 +50,13 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
             variable_array[var_arr_idx++] = var;
             i += 3;
         } else 
+        // Skip endl tokens
         {
             continue;
         }        
     }
+
+    
 
 
     va_list args;
@@ -63,6 +66,7 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
     long double *variable_hash[argc];
     char **unit_hash[argc];
 
+    // Load arguments into hash tables
     for (size_t i = 0; i < argc; i++)
     {
         ident_hash[i] = va_arg(args, char *);
@@ -70,8 +74,10 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
         unit_hash[i] = va_arg(args, char **);
     }
 
+
     va_end(args);
 
+    // Set variables provided by args
     for (size_t i = 0; i < var_arr_idx; i++)
     {
         for (size_t j = 0; j < argc; j++)
@@ -86,6 +92,8 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
                 }
                 
                 *variable_hash[j] = variable_array[i].value;
+
+                // Ignore if NULL provided
                 if (unit_hash[j] != NULL)
                 {
                     *unit_hash[j] = variable_array[i].unit;
@@ -98,8 +106,13 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
         }
     }
     
-    free(variable_array);
+    // Prevents an invalid free
+    if (var_arr_idx > 0)
+    {
+        free(variable_array);
+    }
 
+    // List all missing fields
     char is_missing_vars = 1;
     for (size_t i = 0; i < argc; i++)
     {
@@ -107,7 +120,6 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
         {
             is_missing_vars = 0;
             fprintf(stderr, "Missing field \"%s\"\n", ident_hash[i]);
-            exit(1);
         }
         
     }    
@@ -116,5 +128,5 @@ void parse_token_stream(TokenStream *token_stream, size_t argc, ...)
     {
         exit(1);
     }
- 
+    return;
 }
