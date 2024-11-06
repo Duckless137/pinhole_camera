@@ -32,7 +32,7 @@ bin/%.o: libs/%.c
 	gcc $(flags) -c -o $@ $^
 
 # Compile binaries
-build/%_calculator: ./%.c $(object_files)
+build/%_calculator: src/%.c $(object_files)
 	@mkdir -p build
 	gcc $(flags) -o $@ $^ -lm
 
