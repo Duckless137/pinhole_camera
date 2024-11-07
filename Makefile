@@ -7,7 +7,7 @@ debug_flags := -g -Wall -Wpedantic -O0
 release_flags := -Wall -Werror -Wpedantic -O3
 
 # ---Computer config (DO NOT TOUCH)---
-# Build in dgb or release mode.
+# Build in dbg or release mode.
 # Defaults to debug.
 ifndef config
 	config=debug
