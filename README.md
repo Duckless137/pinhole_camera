@@ -12,7 +12,7 @@ The calculators will find exposure time and distance based on these inputs, and 
 
 These calculators are compiled and build for Unix operating systems using the ELF (Executable Linkable File) format. You can download these beniaries from the `release` section on the github page. If you wish to build them on Windows operating systems, you will need to `git clone` the source code and recompile it using Mingw32-make. 
 ## How to use
-1. After adding the binaries to your local directory or `path`, you will need to open a new shell in any directory of your choosing.
+1. After adding the binaries to your current working directory or `path`, you will need to open a new shell in any directory of your choosing.
 2. In your current working directory, create a new file called `pinhole.conf`. You may choose a different name, but you will need to pass in the path to the config file to the calculator CLI.
 It should be formatted like so:
 ```
@@ -30,7 +30,7 @@ The calculator will let you know what fields you need - just run it with an empt
 
 ## Distance Calculator
 Find the dimensions of the object you want to take a photo of and the dimensions of your film. Choose either width or height and get your choice of both the object and the film and plug that into the calculator.
-For example, with a `(180cm by 120cm)` object and `(18cm by 12cm)` film you will want to plug in either `180cm & 18c` or `120cm and 12cm`.
+For example, with a `(180cm by 120cm)` object and `(18cm by 12cm)` film you will want to plug in either `180cm & 18cm` or `120cm and 12cm`.
 
 Required fields:
 ```
