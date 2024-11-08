@@ -1,6 +1,6 @@
-#include "./include/token_reader.h"
-#include "./include/token_parser.h"
-#include "libs/safe_strcmp.c"
+#include "../include/token_reader.h"
+#include "../include/token_parser.h"
+#include "../libs/safe_strcmp.c"
 #include <stdlib.h>
 #include <math.h>
 
