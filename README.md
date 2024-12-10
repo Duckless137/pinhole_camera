@@ -10,7 +10,7 @@ These are designed for shoebox cameras to calculate the distance you need to sta
 
 The calculators will find exposure time and distance based on these inputs, and show you the math for figuring it out.
 
-These calculators are compiled and build for Unix operating systems using the ELF (Executable Linkable File) format. You can download these beniaries from the `release` section on the github page. If you wish to build them on Windows operating systems, you will need to clone th source code with ```git clone https://github.com/Duckless137/pinhole_camera.git``` and recompile it using Mingw32-make. 
+These calculators are compiled and build for Unix operating systems using the ELF format. You can download these beniaries from the `release` section on the github page. If you wish to use them on a Windows operating system, you will need to clone the source code with ```git clone https://github.com/Duckless137/pinhole_camera.git``` and recompile it using Mingw32-make. 
 ## How to use
 1. After adding the binaries to your current working directory or `path`, you will need to open a new shell in any directory of your choosing.
 2. In your current working directory, create a new file called `pinhole.conf`. You may choose a different name, but you will need to pass in the path to the config file to the calculator CLI.
